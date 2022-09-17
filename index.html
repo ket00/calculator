@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+.container {
+    width:fit-content;
+    border: solid black 1px;
+    align-items: center;
+    background-color: grey;
+}
+.container input{
+border: solid black 1px;
+border-radius: 10px;
+background-color: brown;
+width: 50px;
+height: 50px;
+}
+#result{
+    width: 200px;
+    background-color: white;
+    text-align: end;
+}
+#equal{
+    width: 200px;
+}
+</style>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <td colspan="4"><input type="text" id="result"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="get(this)"></td>
+                <td><input type="button" value="2" onclick="get(this)"></td>
+                <td><input type="button" value="3" onclick="get(this)"></td>
+                <td><input type="button" value="c" onclick="clr()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="get(this)"></td>
+                <td><input type="button" value="5" onclick="get(this)"></td>
+                <td><input type="button" value="6" onclick="get(this)"></td>
+                <td><input type="button" value="/" onclick="get(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="get(this)"></td>
+                <td><input type="button" value="8" onclick="get(this)"></td>
+                <td><input type="button" value="9" onclick="get(this)"></td>
+                <td><input type="button" value="*" onclick="get(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="." onclick="get(this)"></td>
+                <td><input type="button" value="0" onclick="get(this)"></td>
+                <td><input type="button" value="-" onclick="get(this)"></td>
+                <td><input type="button" value="+" onclick="get(this)"></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input id="equal" type="button" value="=" onclick="equal()"></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        function clr(){
+            document.getElementById("result").value= ""
+        }
+        function get(item){
+            document.getElementById("result").value+= item.value
+        }
+        function equal(){
+            var x =document.getElementById("result").value
+            var y = eval(x)
+            document.getElementById("result").value= y
+        }
+    </script>
+</body>
+</html>
